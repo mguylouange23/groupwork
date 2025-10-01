@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amuza | System Architect Portfolio</title>
+    <style>
+        /* -----------------------
+           Global & Typography
+           ----------------------- */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+            color: #374151;
+            margin: 0;
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        /* Section Styling */
+        .section-padding {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+
+        .bg-gray-light {
+            background-color: #f3f4f6;
+        }
+
+        /* -----------------------
+           Portfolio Section Styles
+           ----------------------- */
+        .portfolio-section-header {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1e3a8a;
+            margin-bottom: 4rem;
+            text-align: center;
+        }
+
+        /* Portfolio Components Layout */
+        .portfolio-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        @media (min-width: 1024px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+
+        .portfolio-card-base {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 8px 15px -3px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+        }
+
+        .portfolio-section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1d4ed8;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #eff6ff;
+            padding-bottom: 0.5rem;
+        }
+
+        .portfolio-image-large {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-bio {
+            color: #374151;
+            line-height: 1.75;
+            margin-bottom: 0;
+        }
+
+        /* Skills Table Styling */
+        .skills-table-wrapper {
+            overflow-x: auto;
+            border-radius: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skills-table {
+            width: 100%;
+            min-width: 500px;
+            border-collapse: collapse;
+            font-size: 1rem;
+            line-height: 1.5;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .skills-table th,
+        .skills-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .skills-table th {
+            background-color: #eff6ff;
+            font-weight: 600;
+            color: #1d4ed8;
+            text-transform: uppercase;
+        }
+
+        .skills-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .skills-table tr:nth-child(even) td {
+            background-color: #f9fafb;
+        }
+
+        /* Proficiency bar styling */
+        .proficiency-bar-container {
+            background-color: #e5e7eb;
+            border-radius: 9999px;
+            height: 0.75rem;
+            overflow: hidden;
+        }
+
+        .proficiency-bar {
+            height: 100%;
+            background-color: #2563eb;
+            border-radius: 9999px;
+        }
+
+        /* Hobbies/Media Styling */
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .hobby-item {
+            text-align: center;
+        }
+
+        .hobby-img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+            border: 1px solid #f3f4f6;
+        }
+
+        .hobby-caption {
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #4b5563;
+        }
+
+        .media-embeds {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .media-embeds h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 0.75rem;
+        }
+
+        .audio-player,
+        .video-player {
+            width: 100%;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="text-gray-800">
+
+    <!-- Amuza's Portfolio Section -->
+    <section id="amuza-portfolio" class="section-padding">
+        <div class="container">
+            <h2 class="portfolio-section-header">Jean Paul: Team & Innovation Lead Portfolio</h2>
+
+            <div class="portfolio-grid">
+                <!-- Left Column (Profile & About) -->
+                <div class="space-y-8">
+                    <div class="portfolio-card-base">
+                        <h3 class="portfolio-section-title">Personal Profile</h3>
+                        <!-- Personal Profile Picture -->
+                        <img class="portfolio-image-large"
+                             src="/src/media/jp.jpeg"
+                             alt="Portrait of Amuza">
+
+                        <p class="profile-bio">
+                            Jean Paul is a brilliant Computer Science student specializing in data manipulation and model trainings. 
+                            He combines strong analytical and leadership skills with a passion for innovation, contributing to  model training, 
+                            predictive and building AI models within the project.
+                        </p>
+
+                        <div id="in" style="text-align: center; margin: 20px; font-family: Arial, sans-serif;">
+                            <div id="medias" style="margin-top: 10px; display: flex; justify-content: center; gap: 15px;">
+                                <a href="https://www.instagram.com/mguylouange/" style="display: inline-block;">
+                                    <img src="/src/media/ig.png" alt="Instagram profile link"
+                                         style="width: 24px; height: 24px; cursor: pointer; transition: transform 0.3s;"
+                                         onmouseover="this.style.transform='scale(1.3)'; this.style.opacity='0.8';" 
+                                         onmouseout="this.style.transform='scale(1)'; this.style.opacity='1';">
+                                </a>
+                                <a href="https://www.linkedin.com/in/guy-louange-mutoni-5949ba270/" style="display: inline-block;">
+                                    <img src="/src/media/linkedin.png" alt="LinkedIn profile link"
+                                         style="width: 24px; height: 24px; cursor: pointer; transition: transform 0.3s;"
+                                         onmouseover="this.style.transform='scale(1.3)'; this.style.opacity='0.8';" 
+                                         onmouseout="this.style.transform='scale(1)'; this.style.opacity='1';">
+                                </a>
+                                <a href="https://x.com/mguylouange" style="display: inline-block;">
+                                    <img src="/src/media/twitter.png" alt="Twitter profile link"
+                                         style="width: 24px; height: 24px; cursor: pointer; transition: transform 0.3s;"
+                                         onmouseover="this.style.transform='scale(1.3)'; this.style.opacity='0.8';" 
+                                         onmouseout="this.style.transform='scale(1)'; this.style.opacity='1';">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card-base">
+                        <h3 class="portfolio-section-title">Hobbies & Interests</h3>
+                        <div class="hobbies-grid">
+                            <div class="hobby-item">
+                                <img class="hobby-img" src="/src/media/fav con/hacking_18755017.png"
+                                     alt="Image of hack">
+                                <p class="hobby-caption">Coding</p>
+                            </div>
+                            <div class="hobby-item">
+                                <img class="hobby-img" src="/src/media/fav con/movie_4831192.png"
+                                     alt="Image of movies">
+                                <p class="hobby-caption">Movies</p>
+                            </div>
+                            <div class="hobby-item">
+                                <img class="hobby-img" src="/src/media/fav con/swimming-pool_495712.png"
+                                     alt="Image of swimming">
+                                <p class="hobby-caption">Swimming</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column (Skills, Audio, Video) -->
+                <div class="space-y-8">
+                    <div class="portfolio-card-base">
+                        <h3 class="portfolio-section-title">Technical Skills & Proficiency</h3>
+                        <div class="skills-table-wrapper">
+                            <table class="skills-table">
+                                <thead>
+                                    <tr>
+                                        <th>Skill</th>
+                                        <th>Proficiency Level</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Python</td>
+                                        <td>
+                                            <div class="proficiency-bar-container">
+                                                <div class="proficiency-bar" style="width: 95%;"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>C programming</td>
+                                        <td>
+                                            <div class="proficiency-bar-container">
+                                                <div class="proficiency-bar" style="width: 85%;"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>JavaScript </td>
+                                        <td>
+                                            <div class="proficiency-bar-container">
+                                                <div class="proficiency-bar" style="width: 75%;"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Database management</td>
+                                        <td>
+                                            <div class="proficiency-bar-container">
+                                                <div class="proficiency-bar" style="width: 60%;"></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="portfolio-card-base">
+                        <h3 class="portfolio-section-title">Media Showcase</h3>
+                        <div class="media-embeds">
+                            <div>
+                                <h4>Audio: Favorite song</h4>
+                                <audio controls class="audio-player">
+                                    <source src="/src/media/other/song.mp3" type="audio/mp3">
+                                    <p>Your browser does not support the audio element. (Placeholder)</p>
+                                </audio>
+                            </div>
+                            <div>
+                                <h4>Video: AI explanation</h4>
+                                <video controls class="video-player"
+                                       poster="https://placehold.co/600x400/1f2937/ffffff?text=Video+Placeholder"
+                                       style="height: 250px;">
+                                    <source src="/src/media/other/vid.mp4" type="video/mp4">
+                                    <p>Your browser does not support the video tag. (Placeholder)</p>
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
